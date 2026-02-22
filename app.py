@@ -20,7 +20,7 @@ wage_volatility=st.number_input('Wage Volatility Index')
 disruption_intensity=st.number_input('Disruption Intensity')
 
 if st.button("Predict"):
-    input_data=pd.DataFrame([[job_role,Industry,ai_score,skill_gap,ai_adoption,remote_score,edu_level,salary_change,skill_growth,wage_volatility,disruption_intensity]],columns=['job_role','industry','ai_replacement_score','skill_gap_index','ai_adoption_level','remote_feasibility_score','education_requirement_level','salary_change_percent','skill_demand_growth_percent','wage_volatility_index','ai_disruption_intensity '])
+    input_data=pd.DataFrame([[job_role,Industry,ai_score,skill_gap,ai_adoption,remote_score,edu_level,salary_change,skill_growth,wage_volatility,disruption_intensity]],columns=['job_role','industry','ai_replacement_score','skill_gap_index','ai_adoption_level','remote_feasibility_score','education_requirement_level','salary_change_percent','skill_demand_growth_percent','wage_volatility_index','ai_disruption_intensity'])
     transformed_data=transformer.transform(input_data)
     prediction=model.predict(transformed_data)
     st.success(f"The Risk Category is: {prediction[0]}")
